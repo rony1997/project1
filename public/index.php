@@ -1,9 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Rony
- * Date: 04-10-2018
- * Time: 14:14
+ * User: rohan
+ * Date: 9/25/18
+ * Time: 9:34 PM
  */
-echo'hello';
-echo'12356789';
+main::start('example.csv');
+class main{
+    static public function start($filename){
+        $records = csv::getRecords($filename);
+        $table =html::createTable($records);
+        system::printPage($table);
+    }
+}
